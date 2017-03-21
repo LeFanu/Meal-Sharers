@@ -1,0 +1,46 @@
+﻿<Window x:Name="Cook_Widnow" x:Class="Meal_Sharers.CookWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Meal_Sharers"
+        mc:Ignorable="d"
+        Title="Cook" Height="547.454" Width="1136.591" Background="#FF7AF5FB">
+    <Grid>
+        <Grid Margin="0,0,1,8">
+            <Label x:Name="mainTitle" Content="Welcome To Meal-Sharers" HorizontalAlignment="Left" Margin="336,10,0,0" VerticalAlignment="Top" FontSize="37" FontFamily="Maiandra GD" FontWeight="Bold" BorderThickness="1" Background="#FF7AF5FB" Foreground="#FF8C03A2" BorderBrush="#FF2D007C">
+                <Label.Effect>
+                    <BlurEffect/>
+                </Label.Effect>
+            </Label>
+            <Label x:Name="accountChoicelbl" Content="Show Available Eaters:" HorizontalAlignment="Left" Margin="39,97,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontWeight="Bold" FontSize="18"/>
+            <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="240,101,0,0" VerticalAlignment="Top" Width="90" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="24" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" >
+                <Button.Effect>
+                    <DropShadowEffect Color="#FFCA58FF"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="btnEater" Content="Eater" HorizontalAlignment="Left" Margin="481,440,0,0" VerticalAlignment="Top" Width="122" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="25" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" >
+                <Button.Effect>
+                    <DropShadowEffect Color="#FFCA58FF"/>
+                </Button.Effect>
+            </Button>
+            <Button x:Name="btnSendOffer" Content="Send Meal Offer" HorizontalAlignment="Left" Margin="39,440,0,0" VerticalAlignment="Top" Width="160" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="25" FontSize="14" FontStretch="Expanded" TextOptions.TextHintingMode="Animated">
+                <Button.Effect>
+                    <DropShadowEffect Color="#FFCA58FF"/>
+                </Button.Effect>
+            </Button>
+            <Label x:Name="mainTitle_Copy" Content="Welcome To Meal-Sharers" HorizontalAlignment="Left" Margin="342,11,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Maiandra GD" FontWeight="Bold" BorderThickness="1" Background="{x:Null}" Foreground="#FF05006E"/>
+            <ListBox x:Name="listAvailableEaters" HorizontalAlignment="Left" Height="241" Margin="41,180,0,0" VerticalAlignment="Top" Width="359"/>
+            <ComboBox x:Name="cmbChooseCity" HorizontalAlignment="Left" Margin="40,143,0,0" VerticalAlignment="Top" Width="170" Background="#FF1F5CFF" Foreground="White" Text="Choose City" FontFamily="Maiandra GD" FontSize="14" FontWeight="Bold"/>
+            <ComboBox x:Name="cmbMealPreference" HorizontalAlignment="Left" Margin="240,143,0,0" VerticalAlignment="Top" Width="160" Background="#FF1F5CFF" Foreground="White" Text="Meal Preference" FontFamily="Maiandra GD" FontSize="14" FontWeight="Bold"/>
+            <Label x:Name="upcomingMeals" Content="Upcoming Meals:" HorizontalAlignment="Left" Margin="481,97,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontWeight="Bold" FontSize="18"/>
+            <ListBox x:Name="listUpcomingMeals" HorizontalAlignment="Left" Height="278" Margin="481,143,0,0" VerticalAlignment="Top" Width="321"/>
+            <Label x:Name="yourStatus" Content="Your Status:" HorizontalAlignment="Left" Margin="832,97,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontWeight="Bold" FontSize="18"/>
+            <Canvas x:Name="canvStatus" HorizontalAlignment="Left" Height="278" Margin="832,143,0,0" VerticalAlignment="Top" Width="246" Background="White">
+                <Border BorderBrush="#FF05006E" BorderThickness="2" Height="278" Width="248"/>
+            </Canvas>
+
+        </Grid>
+
+    </Grid>
+</Window>

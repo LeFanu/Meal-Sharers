@@ -1,0 +1,28 @@
+﻿<Window x:Name="EaterWindow1" x:Class="Meal_Sharers.EaterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Meal_Sharers"
+        mc:Ignorable="d"
+        Title="Eater" Height="429.091" Width="646.061" Background="#FF7AF5FB">
+    <Grid>
+        <Label x:Name="mainTitle" Content="Welcome To Meal-Sharers" HorizontalAlignment="Left" Margin="96,10,0,0" VerticalAlignment="Top" FontSize="37" FontFamily="Maiandra GD" FontWeight="Bold" BorderThickness="1" Background="#FF7AF5FB" Foreground="#FF8C03A2" BorderBrush="#FF2D007C">
+            <Label.Effect>
+                <BlurEffect/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="mainTitle_Copy" Content="Welcome To Meal-Sharers" HorizontalAlignment="Left" Margin="102,11,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Maiandra GD" FontWeight="Bold" BorderThickness="1" Background="{x:Null}" Foreground="#FF05006E"/>
+        <Button x:Name="btnOk" Content="OK" HorizontalAlignment="Left" Margin="102,320,0,0" VerticalAlignment="Top" Width="122" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="32" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" >
+            <Button.Effect>
+                <DropShadowEffect Color="#FFCA58FF"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="425,320,0,0" VerticalAlignment="Top" Width="122" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="32" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated">
+            <Button.Effect>
+                <DropShadowEffect Color="#FFCA58FF"/>
+            </Button.Effect>
+        </Button>
+
+    </Grid>
+</Window>
