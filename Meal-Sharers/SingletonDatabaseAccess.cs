@@ -13,6 +13,20 @@ namespace Meal_Sharers
     [Serializable]
     class SingletonDatabaseAccess
     {
+        private static String passwordForAll = "1234";
+        public static string PasswordForAll
+        {
+            get
+            {
+                return passwordForAll;
+            }
+
+            set
+            {
+                passwordForAll = value;
+            }
+        }
+
         private List<Cook> cooksDB = new List<Cook>();
         public List<Cook> CooksDB
         {
@@ -41,7 +55,19 @@ namespace Meal_Sharers
             }
         }
 
-      
+        private List<Administrator> adminsDB = new List<Administrator>();
+        public List<Administrator> AdminsDB
+        {
+            get
+            {
+                return adminsDB;
+            }
+
+            set
+            {
+                adminsDB = value;
+            }
+        }
 
         private SingletonDatabaseAccess ()
         {
@@ -64,6 +90,10 @@ namespace Meal_Sharers
                 return dbInstance;
             }
         }
+
+        
+
+
 
 
 
@@ -122,7 +152,30 @@ namespace Meal_Sharers
             }
             catch (FileNotFoundException)
             {
-                MessageBox.Show("Database for Eaters not found! Please add new Cook to create new one.", "Missing File!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Database for Eaters not found! Please add new Eater to create new one.", "Missing File!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            try
+            {
+                //we are accessing our file
+                filename = "admins.data";
+                stream = File.OpenRead(filename);
+                try
+                {
+                    adminsDB = (List<Administrator>)formatter.Deserialize(stream);
+                    Console.WriteLine("Admins were read from!!!");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("File for Administrators is Empty. Please create new Database.", "Empty File", MessageBoxButton.OK,
+                        MessageBoxImage.Error);
+                }
+                stream.Close();
+
+            }
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("Database for Administrators not found! Please add new Administrator to create new one.", "Missing File!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -142,6 +195,33 @@ namespace Meal_Sharers
             formatter.Serialize(stream, eatersDB);
             stream.Close();
             Console.WriteLine("Eaters were saved!!!");
+
+            filename = "admins.data";
+            stream = File.Create(filename);
+            formatter.Serialize(stream, adminsDB);
+            stream.Close();
+            Console.WriteLine("Admins were saved!!!");
         }
+
+
+        //===================ACTIONS FOR COOK===================================================
+        public List<Eater> eatersSearch(String query)
+        {
+            //creating variable to store filtered results
+            IEnumerable<Eater> eatersList;
+            eatersList = EatersDB.AsQueryable();
+            //creating list for filtered objects
+            List<Eater> filteredResults = new List<Eater>();
+
+            eatersList = eatersList.Where(eat => eat.Name.ToLower().Contains(query.ToLower()));
+            foreach (Eater eater in eatersList)
+            {
+                filteredResults.Add(eater);
+            }
+
+            return filteredResults;
+        }
+
+
     }
 }

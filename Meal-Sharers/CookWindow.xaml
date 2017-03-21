@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Meal_Sharers"
         mc:Ignorable="d"
-        Title="Cook" Height="547.454" Width="1136.591" Background="#FF7AF5FB">
+        Title="Cook" Height="651" Width="1136.591" Background="#FF7AF5FB">
     <Grid>
         <Grid Margin="0,0,1,8">
             <Label x:Name="mainTitle" Content="Welcome To Meal-Sharers" HorizontalAlignment="Left" Margin="336,10,0,0" VerticalAlignment="Top" FontSize="37" FontFamily="Maiandra GD" FontWeight="Bold" BorderThickness="1" Background="#FF7AF5FB" Foreground="#FF8C03A2" BorderBrush="#FF2D007C">
@@ -14,31 +14,40 @@
                 </Label.Effect>
             </Label>
             <Label x:Name="accountChoicelbl" Content="Show Available Eaters:" HorizontalAlignment="Left" Margin="39,97,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontWeight="Bold" FontSize="18"/>
-            <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="240,101,0,0" VerticalAlignment="Top" Width="90" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="24" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" >
+            <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="240,97,0,0" VerticalAlignment="Top" Width="90" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="28" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Click="btnSearch_Click" >
                 <Button.Effect>
                     <DropShadowEffect Color="#FFCA58FF"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="btnEater" Content="Eater" HorizontalAlignment="Left" Margin="481,440,0,0" VerticalAlignment="Top" Width="122" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="25" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" >
+            <Button x:Name="btnCompletedMeal" Content="Mark As Completed" HorizontalAlignment="Left" Margin="481,495,0,0" VerticalAlignment="Top" Width="174" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="35" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" >
                 <Button.Effect>
                     <DropShadowEffect Color="#FFCA58FF"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="btnSendOffer" Content="Send Meal Offer" HorizontalAlignment="Left" Margin="39,440,0,0" VerticalAlignment="Top" Width="160" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="25" FontSize="14" FontStretch="Expanded" TextOptions.TextHintingMode="Animated">
+            <Button x:Name="btnSendOffer" Content="Send Meal Offer" HorizontalAlignment="Left" Margin="41,495,0,0" VerticalAlignment="Top" Width="160" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="35" FontSize="14" FontStretch="Expanded" TextOptions.TextHintingMode="Animated">
                 <Button.Effect>
                     <DropShadowEffect Color="#FFCA58FF"/>
                 </Button.Effect>
             </Button>
             <Label x:Name="mainTitle_Copy" Content="Welcome To Meal-Sharers" HorizontalAlignment="Left" Margin="342,11,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Maiandra GD" FontWeight="Bold" BorderThickness="1" Background="{x:Null}" Foreground="#FF05006E"/>
-            <ListBox x:Name="listAvailableEaters" HorizontalAlignment="Left" Height="241" Margin="41,180,0,0" VerticalAlignment="Top" Width="359"/>
-            <ComboBox x:Name="cmbChooseCity" HorizontalAlignment="Left" Margin="40,143,0,0" VerticalAlignment="Top" Width="170" Background="#FF1F5CFF" Foreground="White" Text="Choose City" FontFamily="Maiandra GD" FontSize="14" FontWeight="Bold"/>
-            <ComboBox x:Name="cmbMealPreference" HorizontalAlignment="Left" Margin="240,143,0,0" VerticalAlignment="Top" Width="160" Background="#FF1F5CFF" Foreground="White" Text="Meal Preference" FontFamily="Maiandra GD" FontSize="14" FontWeight="Bold"/>
+            <ListBox x:Name="listAvailableEaters" HorizontalAlignment="Left" Height="270" Margin="41,215,0,0" VerticalAlignment="Top" Width="359" MouseDoubleClick="listAvailableEaters_MouseDoubleClick"/>
+            <ComboBox x:Name="cmbChooseCity" HorizontalAlignment="Left" Margin="41,177,0,0" VerticalAlignment="Top" Width="181" Background="#FF1F5CFF" Foreground="White" Text="Choose City" FontFamily="Maiandra GD" FontSize="14" FontWeight="Bold"/>
+            <ComboBox x:Name="cmbMealPreference" HorizontalAlignment="Left" Margin="240,177,0,0" VerticalAlignment="Top" Width="160" Background="#FF1F5CFF" Foreground="White" Text="Meal Preference" FontFamily="Maiandra GD" FontSize="14" FontWeight="Bold"/>
             <Label x:Name="upcomingMeals" Content="Upcoming Meals:" HorizontalAlignment="Left" Margin="481,97,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontWeight="Bold" FontSize="18"/>
-            <ListBox x:Name="listUpcomingMeals" HorizontalAlignment="Left" Height="278" Margin="481,143,0,0" VerticalAlignment="Top" Width="321"/>
+            <ListBox x:Name="listUpcomingMeals" HorizontalAlignment="Left" Height="342" Margin="481,143,0,0" VerticalAlignment="Top" Width="321"/>
             <Label x:Name="yourStatus" Content="Your Status:" HorizontalAlignment="Left" Margin="832,97,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontWeight="Bold" FontSize="18"/>
             <Canvas x:Name="canvStatus" HorizontalAlignment="Left" Height="278" Margin="832,143,0,0" VerticalAlignment="Top" Width="246" Background="White">
-                <Border BorderBrush="#FF05006E" BorderThickness="2" Height="278" Width="248"/>
+                <Border BorderBrush="#FF05006E" BorderThickness="2" Height="278" Width="248">
+                    <ListBox x:Name="lstCurrentStatus"/>
+                </Border>
             </Canvas>
+            <Label x:Name="label" Content="Choose City:" HorizontalAlignment="Left" Margin="41,143,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" FontFamily="Maiandra GD" FontSize="16"/>
+            <Label x:Name="label_Copy" Content="Meal Preference:" HorizontalAlignment="Left" Margin="240,143,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="175" FontFamily="Maiandra GD" FontSize="16"/>
+            <Button x:Name="btnUploadDetails" Content="Upload Details" HorizontalAlignment="Left" Margin="670,495,0,0" VerticalAlignment="Top" Width="132" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="35" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" >
+                <Button.Effect>
+                    <DropShadowEffect Color="#FFCA58FF"/>
+                </Button.Effect>
+            </Button>
 
         </Grid>
 

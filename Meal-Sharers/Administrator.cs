@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Meal_Sharers
 {
-    class Administrator
+    [Serializable]
+    public class Administrator
     {
 
         //instance fields with getters and setters

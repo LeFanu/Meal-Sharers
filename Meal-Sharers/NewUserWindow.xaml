@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Meal_Sharers"
         mc:Ignorable="d"
-        Title="Add New User" Height="616.909" Width="487.273" Background="#FF7AF5FB">
+        Title="Add New User" Height="660.954" Width="487.273" Background="#FF7AF5FB">
     <Grid Margin="0,0,0,44">
         <Label x:Name="mainTitle" Content="Welcome To Meal-Sharers" HorizontalAlignment="Left" Margin="17,9,0,0" VerticalAlignment="Top" FontSize="37" FontFamily="Maiandra GD" FontWeight="Bold" BorderThickness="1" Background="#FF7AF5FB" Foreground="#FF8C03A2" BorderBrush="#FF2D007C">
             <Label.Effect>
@@ -19,7 +19,7 @@
             <ListBoxItem Content="Eater" Foreground="#FF002EFF"/>
             <ListBoxItem Content="Administrator" Foreground="#FF002EFF"/>
         </ComboBox>
-        <Canvas x:Name="createCook" HorizontalAlignment="Left" Height="402" Margin="23,185,0,0" VerticalAlignment="Top" Width="439" Background="#FF44F6FF">
+        <Canvas x:Name="createCook" HorizontalAlignment="Left" Margin="23,185,0,-43" Width="439" Background="#FF44F6FF">
             <Label x:Name="label" Content="Name:" Canvas.Left="10" Canvas.Top="10"/>
             <TextBox x:Name="txtCookName" Height="23" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="36" Width="120"/>
             <Label x:Name="label1" Content="Phone Number: " Canvas.Left="10" Canvas.Top="74"/>
@@ -34,16 +34,18 @@
                 <ListBoxItem Content="Yes" Foreground="#FF002EFF"/>
                 <ListBoxItem Content="No" Foreground="#FF002EFF"/>
             </ComboBox>
-            <Button x:Name="btnSubmit_Cook" Content="Submit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="136" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="42" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Canvas.Left="10" Canvas.Top="287" Click="btnSubmit_Cook_Click" >
+            <Button x:Name="btnSubmit_Cook" Content="Submit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="136" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="42" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Canvas.Left="10" Canvas.Top="340" Click="btnSubmit_Cook_Click" >
                 <Button.Effect>
                     <DropShadowEffect Color="#FFCA58FF"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="btnCancel_Cook" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="127" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="42" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Canvas.Left="217" Canvas.Top="287" Click="cancelAccountCreation" RenderTransformOrigin="1.542,0.552" >
+            <Button x:Name="btnCancel_Cook" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="127" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="42" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Canvas.Left="217" Canvas.Top="340" Click="cancelAccountCreation" RenderTransformOrigin="1.542,0.552" >
                 <Button.Effect>
                     <DropShadowEffect Color="#FFCA58FF"/>
                 </Button.Effect>
             </Button>
+            <Label x:Name="label9" Content="City:" Canvas.Left="10" Canvas.Top="273"/>
+            <TextBox x:Name="txtCityCook" Height="23" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="299" Width="120"/>
         </Canvas>
         <Canvas x:Name="createEater" HorizontalAlignment="Left" Height="402" Margin="23,185,0,0" VerticalAlignment="Top" Width="439" Background="#FF44F6FF">
             <Label x:Name="label3" Content="Name:" Canvas.Left="10" Canvas.Top="10"/>
@@ -60,20 +62,22 @@
                 <ListBoxItem Content="Yes" Foreground="#FF002EFF"/>
                 <ListBoxItem Content="No" Foreground="#FF002EFF"/>
             </ComboBox>
-            <Button x:Name="btnSubmit_Eater" Content="Submit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="136" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="42" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Canvas.Left="10" Canvas.Top="287" Click="btnSubmit_Eater_Click" >
+            <Button x:Name="btnSubmit_Eater" Content="Submit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="136" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="42" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Canvas.Left="10" Canvas.Top="345" Click="btnSubmit_Eater_Click" >
                 <Button.Effect>
                     <DropShadowEffect Color="#FFCA58FF"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="btnCancel_Eater" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="127" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="42" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Canvas.Left="217" Canvas.Top="287" Click="cancelAccountCreation" RenderTransformOrigin="1.542,0.552" >
+            <Button x:Name="btnCancel_Eater" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="127" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="42" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Canvas.Left="220" Canvas.Top="345" Click="cancelAccountCreation" RenderTransformOrigin="1.542,0.552" >
                 <Button.Effect>
                     <DropShadowEffect Color="#FFCA58FF"/>
                 </Button.Effect>
             </Button>
             <Label x:Name="label3_Copy" Content="Age:" Canvas.Left="10" Canvas.Top="212"/>
             <TextBox x:Name="txtEaterAge" Height="23" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="243" Width="120"/>
+            <Label x:Name="label10" Content="City:" Canvas.Left="10" Canvas.Top="271"/>
+            <TextBox x:Name="txtCityEater" Height="23" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="297" Width="120"/>
         </Canvas>
-        <Canvas x:Name="createAdmin" HorizontalAlignment="Left" Height="402" Margin="23,185,0,0" VerticalAlignment="Top" Width="439" Background="#FF44F6FF">
+        <Canvas x:Name="createAdmin" HorizontalAlignment="Left" Height="402" Margin="23,185,0,0" VerticalAlignment="Top" Width="439" Background="#FF44F6FF" d:IsHidden="True">
             <Label x:Name="label6" Content="Name:" Canvas.Left="10" Canvas.Top="10"/>
             <TextBox x:Name="txtAdminName" Height="23" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="36" Width="120"/>
             <Label x:Name="label7" Content="Phone Number: " Canvas.Left="10" Canvas.Top="74"/>

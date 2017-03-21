@@ -70,6 +70,7 @@ namespace Meal_Sharers
             {
                 newCookAccount.ValidHygieneCertificate = true;
             }
+            newCookAccount.City = txtCityCook.Text;
             dbAccess.CooksDB.Add(newCookAccount);
             savingAccountAndClosingWindow(e);
             
@@ -80,6 +81,12 @@ namespace Meal_Sharers
             newEaterAccount = new Eater();
             newEaterAccount.Name = txtEaterName.Text;
             newEaterAccount.PhoneNumber = txtEaterPhone.Text;
+            newEaterAccount.Age = Int32.Parse(txtEaterAge.Text);
+            if (cmbChooseDisability.SelectedIndex  == 0)
+            {
+                newEaterAccount.HasDisability = true; 
+            }
+            newEaterAccount.City = txtCityEater.Text;
             dbAccess.EatersDB.Add(newEaterAccount);
             savingAccountAndClosingWindow(e);
         }
@@ -87,6 +94,8 @@ namespace Meal_Sharers
         private void btnSubmit_Admin_Click(object sender, RoutedEventArgs e)
         {
             newAdminAccount = new Administrator();
+            newAdminAccount.Name = txtAdminName.Text;
+            dbAccess.AdminsDB.Add(newAdminAccount);
             savingAccountAndClosingWindow(e);
         }
 

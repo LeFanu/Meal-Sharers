@@ -23,7 +23,7 @@
                 <DropShadowEffect Color="#FFCA58FF"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="btnAdministrator" Content="Administrator" HorizontalAlignment="Left" Margin="523,135,0,0" VerticalAlignment="Top" Width="122" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="32" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated">
+        <Button x:Name="btnAdministrator" Content="Administrator" HorizontalAlignment="Left" Margin="523,135,0,0" VerticalAlignment="Top" Width="122" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="32" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Click="btnAdministrator_Click">
             <Button.Effect>
                 <DropShadowEffect Color="#FFCA58FF"/>
             </Button.Effect>
@@ -34,19 +34,19 @@
                 <DropShadowEffect Color="#FFCA58FF"/>
             </Button.Effect>
         </Button>
-        <ComboBox x:Name="cmbChooseAccount" HorizontalAlignment="Left" Margin="39,189,0,0" VerticalAlignment="Top" Width="212" Background="#FF1F5CFF" Foreground="White" Text="Choose Account To Create" FontFamily="Maiandra GD" FontSize="14" FontWeight="Bold" Height="32" VerticalContentAlignment="Center" Padding="10,5,5,5" >
+        <ComboBox x:Name="cmbChooseAccount" HorizontalAlignment="Left" Margin="39,189,0,0" VerticalAlignment="Top" Width="363" Background="#FF1F5CFF" Foreground="White" Text="Choose Account To Create" FontFamily="Maiandra GD" FontSize="14" FontWeight="Bold" Height="32" VerticalContentAlignment="Center" Padding="10,5,5,5" >
             <ListBoxItem Content="Cook" Foreground="#FF002EFF"/>
             <ListBoxItem Content="Eater" Foreground="#FF002EFF"/>
             <ListBoxItem Content="Administrator" Foreground="#FF002EFF"/>
         </ComboBox>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="129,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"/>
-        <Label x:Name="password" Content="Password:" HorizontalAlignment="Left" Margin="39,236,0,0" VerticalAlignment="Top" Width="86" FontFamily="Maiandra GD" FontSize="16"/>
-        <Button x:Name="btnEnterAccount" Content="Log In" HorizontalAlignment="Left" Margin="280,233,0,0" VerticalAlignment="Top" Width="122" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="32" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated">
+        <Label x:Name="password" Content="Password:" HorizontalAlignment="Left" Margin="39,245,0,0" VerticalAlignment="Top" Width="86" FontFamily="Maiandra GD" FontSize="16"/>
+        <Button x:Name="btnLogIn" Content="Log In" HorizontalAlignment="Left" Margin="280,242,0,0" VerticalAlignment="Top" Width="122" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="32" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Click="btnLogIn_Click">
             <Button.Effect>
                 <DropShadowEffect Color="#FFCA58FF"/>
             </Button.Effect>
         </Button>
         <Label x:Name="accountLabel" Content="Do not have an account yet? Why not to join us?" HorizontalAlignment="Left" Margin="39,311,0,0" VerticalAlignment="Top" Width="363" FontFamily="Maiandra GD" FontSize="16"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="126,245,0,0" VerticalAlignment="Top" Width="135" Height="29" ToolTip="Please enter your password here" VerticalContentAlignment="Bottom"/>
 
     </Grid>
 </Window>

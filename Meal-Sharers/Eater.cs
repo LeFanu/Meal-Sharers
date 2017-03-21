@@ -7,9 +7,37 @@ using System.Threading.Tasks;
 namespace Meal_Sharers
 {
     [Serializable]
-    class Eater
+    public class Eater
     {
-        //instance fields with getters and setters
+        //Instance fields with getters and setters
+        private static int orderNumberCount = 0;
+        public static int OrderNumberCount
+        {
+            get
+            {
+                return Eater.orderNumberCount;
+            }
+
+            set
+            {
+                Eater.orderNumberCount = value;
+            }
+        }
+
+        private int orderNumber;
+        public int OrderNumber
+        {
+            get
+            {
+                return orderNumber;
+            }
+
+            set
+            {
+                orderNumber = value;
+            }
+        }
+
         private String name;
         public string Name
         {
@@ -38,6 +66,54 @@ namespace Meal_Sharers
             }
         }
 
+        private int age;
+        public int Age
+        {
+            get
+            {
+                return age;
+            }
+
+            set
+            {
+                age = value;
+            }
+        }
+
+        private bool hasDisability = false;
+        public bool HasDisability
+        {
+            get
+            {
+                return hasDisability;
+            }
+
+            set
+            {
+                hasDisability = value;
+            }
+        }
+
+        private String city;
+        public string City
+        {
+            get
+            {
+                return city;
+            }
+
+            set
+            {
+                city = value;
+            }
+        }
+
+        
+
+        public int calculateOrderCount()
+        {
+            return orderNumberCount++;
+        }
         
 
 
