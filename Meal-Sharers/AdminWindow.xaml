@@ -1,0 +1,19 @@
+﻿<Window x:Class="Meal_Sharers.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Meal_Sharers"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="511" Width="489" Background="#FF7AF5FB">
+    <Grid>
+        <Button x:Name="btnLogOut" Content="Log Out" HorizontalAlignment="Left" Margin="265,405,0,0" VerticalAlignment="Top" Width="132" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="35" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Click="btnLogOut_Click" >
+            <Button.Effect>
+                <DropShadowEffect Color="#FFCA58FF"/>
+            </Button.Effect>
+        </Button>
+        <Label x:Name="label" Content="List Of Available Cooks:" HorizontalAlignment="Left" Margin="20,60,0,0" VerticalAlignment="Top" Width="140"/>
+        <ListBox x:Name="lstAvailableCooks" HorizontalAlignment="Left" Height="229" Margin="20,91,0,0" VerticalAlignment="Top" Width="385"/>
+
+    </Grid>
+</Window>

@@ -20,9 +20,9 @@ namespace Meal_Sharers
     public partial class NewUserWindow : Window
     {
         SingletonDatabaseAccess dbAccess;
-        Cook newCookAccount;
-        Eater newEaterAccount;
-        Administrator newAdminAccount;
+        Cook cookAccount;
+        Eater eaterAccount;
+        Administrator adminAccount;
 
         public NewUserWindow()
         {
@@ -59,43 +59,63 @@ namespace Meal_Sharers
 
         private void btnSubmit_Cook_Click(object sender, RoutedEventArgs e)
         {
-            newCookAccount = new Cook();
-            newCookAccount.Name = txtCookName.Text;
-            newCookAccount.PhoneNumber = txtCookPhone.Text;
+            cookAccount = new Cook();
+            cookAccount.Name = txtCookName.Text;
+            cookAccount.PhoneNumber = txtCookPhone.Text;
             if (cmbChoosePVG.SelectedIndex == 0)
             {
-                newCookAccount.ValidPVG = true;
+                cookAccount.ValidPVG = Cook.pvg_hygiene_statuses.OK;
+            }
+            else if (cmbChoosePVG.SelectedIndex == 1)
+            {
+                cookAccount.ValidPVG = Cook.pvg_hygiene_statuses.Rejected;
+            }
+            else
+            {
+                cookAccount.ValidPVG = Cook.pvg_hygiene_statuses.AwaitingResults;
+                MessageBox.Show("In order to be able to share the meals you need to have valid PVG Certificate");
             }
             if (cmbChooseHygieneCertificate.SelectedIndex == 0)
             {
-                newCookAccount.ValidHygieneCertificate = true;
+                cookAccount.ValidHygieneCertificate = Cook.pvg_hygiene_statuses.OK;
             }
-            newCookAccount.City = txtCityCook.Text;
-            dbAccess.CooksDB.Add(newCookAccount);
+            else
+            {
+                cookAccount.ValidHygieneCertificate = Cook.pvg_hygiene_statuses.None;
+                MessageBox.Show("In order to be able to share the meals you need to have valid Hygiene Certificate and renew that when it is needed.");
+            }
+            cookAccount.City = txtCityCook.Text;
+            if (cookAccount.ValidPVG == Cook.pvg_hygiene_statuses.OK && (cookAccount.ValidHygieneCertificate == Cook.pvg_hygiene_statuses.OK || cookAccount.ValidHygieneCertificate == Cook.pvg_hygiene_statuses.RenevalWith3months))
+            {
+                cookAccount.ActiveSince = DateTime.Today.Date;
+                Console.WriteLine("Today is " + cookAccount.ActiveSince.Date);
+            }
+            dbAccess.CooksDB.Add(cookAccount);
             savingAccountAndClosingWindow(e);
             
         }
 
         private void btnSubmit_Eater_Click(object sender, RoutedEventArgs e)
         {
-            newEaterAccount = new Eater();
-            newEaterAccount.Name = txtEaterName.Text;
-            newEaterAccount.PhoneNumber = txtEaterPhone.Text;
-            newEaterAccount.Age = Int32.Parse(txtEaterAge.Text);
+            eaterAccount = new Eater();
+            eaterAccount.Name = txtEaterName.Text;
+            eaterAccount.PhoneNumber = txtEaterPhone.Text;
+            eaterAccount.Age = Int32.Parse(txtEaterAge.Text);
             if (cmbChooseDisability.SelectedIndex  == 0)
             {
-                newEaterAccount.HasDisability = true; 
+                eaterAccount.HasDisability = true; 
             }
-            newEaterAccount.City = txtCityEater.Text;
-            dbAccess.EatersDB.Add(newEaterAccount);
+            eaterAccount.City = txtCityEater.Text;
+            eaterAccount.MealPreferences = txtMealPreferencesEater.Text;
+            dbAccess.EatersDB.Add(eaterAccount);
             savingAccountAndClosingWindow(e);
         }
 
         private void btnSubmit_Admin_Click(object sender, RoutedEventArgs e)
         {
-            newAdminAccount = new Administrator();
-            newAdminAccount.Name = txtAdminName.Text;
-            dbAccess.AdminsDB.Add(newAdminAccount);
+            adminAccount = new Administrator();
+            adminAccount.Name = txtAdminName.Text;
+            dbAccess.AdminsDB.Add(adminAccount);
             savingAccountAndClosingWindow(e);
         }
 

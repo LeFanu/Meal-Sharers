@@ -8,7 +8,7 @@
         Title="SendMealOffer" Height="511" Width="644" Background="#FF7AF5FB">
     <Grid>
         <Label x:Name="mainTitle_Copy" Content="Meal Offer" HorizontalAlignment="Left" Margin="75,0,0,0" VerticalAlignment="Top" FontSize="22" FontFamily="Maiandra GD" FontWeight="Bold" BorderThickness="1" Background="{x:Null}" Foreground="#FF05006E" Height="46" Width="125"/>
-        <Button x:Name="btnSendOffer" Content="Send Offer" HorizontalAlignment="Left" Margin="20,376,0,0" VerticalAlignment="Top" Width="142" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="32" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Click="btnSendOffer_Click" >
+        <Button x:Name="btnSendOffer" Content="Send Offer" HorizontalAlignment="Left" Margin="20,376,0,0" VerticalAlignment="Top" Width="142" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="32" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Click="btnSendOffer_Click" IsEnabled="False" >
             <Button.Effect>
                 <DropShadowEffect Color="#FFCA58FF"/>
             </Button.Effect>
@@ -24,19 +24,16 @@
         <Label x:Name="lblEaterName" Content="Eater Name" HorizontalAlignment="Left" Margin="20,152,0,0" VerticalAlignment="Top" Width="220" FontFamily="Arial" FontSize="16" Foreground="#FF0432FF"/>
         <Label x:Name="lblEaterCity" Content="Eater City" HorizontalAlignment="Left" Margin="20,180,0,0" VerticalAlignment="Top" Width="220" FontFamily="Arial" FontSize="14" Foreground="#FF0432FF"/>
         <Label x:Name="label" Content="Select Date:" HorizontalAlignment="Left" Margin="20,211,0,0" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Left" Margin="20,242,0,0" VerticalAlignment="Top" Width="142"/>
+        <DatePicker x:Name="dateMealDate" HorizontalAlignment="Left" Margin="20,242,0,0" VerticalAlignment="Top" Width="142"/>
         <Label x:Name="label_Copy" Content="Select Time:" HorizontalAlignment="Left" Margin="20,279,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cmbSetTime" HorizontalAlignment="Left" Margin="20,305,0,0" VerticalAlignment="Top" Width="142"/>
-        <Button x:Name="btnSendMessage" Content="Send Message" HorizontalAlignment="Left" Margin="443,376,0,0" VerticalAlignment="Top" Width="122" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="32" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" RenderTransformOrigin="1.025,0.625" Click="btnSendMessage_Click">
+        <Button x:Name="btnUploadPicture" Content="Upload Picture" HorizontalAlignment="Left" Margin="443,376,0,0" VerticalAlignment="Top" Width="137" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="32" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" RenderTransformOrigin="1.025,0.625" Click="btnUploadPicture_Click">
             <Button.Effect>
                 <DropShadowEffect Color="#FFCA58FF"/>
             </Button.Effect>
         </Button>
-        <Label x:Name="label_Copy1" Content="First Meal with this Eater?" HorizontalAlignment="Left" Margin="320,53,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy2" Content="Why not to send a welcome message?" HorizontalAlignment="Left" Margin="320,84,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtMessageToEater" HorizontalAlignment="Left" Height="245" Margin="320,115,0,0" TextWrapping="Wrap"
-      AcceptsReturn="True"
-      VerticalScrollBarVisibility="Visible" Text="TextBox" VerticalAlignment="Top" Width="260"/>
+        <Label x:Name="label_Copy2" Content="Upload the picture of the prepared meal:" HorizontalAlignment="Left" Margin="198,53,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="imgMeal" HorizontalAlignment="Left" Height="235" Margin="190,79,0,0" VerticalAlignment="Top" Width="382" OpacityMask="White"/>
 
     </Grid>
 </Window>

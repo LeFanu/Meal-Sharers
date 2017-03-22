@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace Meal_Sharers
 {
-    class Meal
+    [Serializable]
+    public class Meal
     {
         //instance fields with getters and setters
         private Cook cookParticipant;
         private Eater eaterParticipant;
         private DateTime date = new DateTime();
-        private DateTime time;
+        private String time;
         private string cookComments;
         private string eaterComments;
         private string administratorComments;
         private string messageToEater;
-        private bool hasMessage = false;
+        private bool offerAccepeted = false;
+
+        private byte[]  mealPhoto = new byte[10000000];
 
         public Cook CookParticipant
         {
@@ -97,16 +102,16 @@ namespace Meal_Sharers
             }
         }
 
-        public bool HasMessage
+        public bool OfferAccepeted
         {
             get
             {
-                return hasMessage;
+                return offerAccepeted;
             }
 
             set
             {
-                hasMessage = value;
+                offerAccepeted = value;
             }
         }
 
@@ -114,16 +119,40 @@ namespace Meal_Sharers
         {
             get
             {
-                return Date;
+                return date;
             }
 
             set
             {
-                Date = value;
+                date = value;
             }
         }
 
+        public string Time
+        {
+            get
+            {
+                return time;
+            }
 
+            set
+            {
+                time = value;
+            }
+        }
+
+        public byte[] MealPhoto
+        {
+            get
+            {
+                return mealPhoto;
+            }
+
+            set
+            {
+                mealPhoto = value;
+            }
+        }
 
         public Meal ()
         {

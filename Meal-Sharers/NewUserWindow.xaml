@@ -25,12 +25,13 @@
             <Label x:Name="label1" Content="Phone Number: " Canvas.Left="10" Canvas.Top="74"/>
             <TextBox x:Name="txtCookPhone" Height="23" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="105" Width="120"/>
             <Label x:Name="label2" Content="Do you have valid PVG?" Canvas.Left="10" Canvas.Top="147" RenderTransformOrigin="0,0.192"/>
-            <ComboBox x:Name="cmbChoosePVG" HorizontalAlignment="Left" VerticalAlignment="Top" Width="61" Background="#FF1F5CFF" Foreground="White" Text="Choose Account To Create" FontFamily="Maiandra GD" FontSize="14" FontWeight="Bold" Height="25" VerticalContentAlignment="Center" Padding="10,5,5,5" Canvas.Left="10" Canvas.Top="173">
+            <ComboBox x:Name="cmbChoosePVG" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Background="#FF1F5CFF" Foreground="White" Text="Choose Account To Create" FontFamily="Maiandra GD" FontSize="14" FontWeight="Bold" Height="25" VerticalContentAlignment="Center" Padding="10,5,5,5" Canvas.Left="10" Canvas.Top="173">
                 <ListBoxItem Content="Yes" Foreground="#FF002EFF"/>
                 <ListBoxItem Content="No" Foreground="#FF002EFF"/>
+                <ListBoxItem Content="Awaiting Results" Foreground="#FF002EFF"/>
             </ComboBox>
             <Label x:Name="label2_Copy" Content="Do you have valid Hygiene Certificate?" Canvas.Left="10" Canvas.Top="212" RenderTransformOrigin="0,0.192"/>
-            <ComboBox x:Name="cmbChooseHygieneCertificate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="61" Background="#FF1F5CFF" Foreground="White" Text="Choose Account To Create" FontFamily="Maiandra GD" FontSize="14" FontWeight="Bold" Height="25" VerticalContentAlignment="Center" Padding="10,5,5,5" Canvas.Left="10" Canvas.Top="243">
+            <ComboBox x:Name="cmbChooseHygieneCertificate" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Background="#FF1F5CFF" Foreground="White" Text="Choose Account To Create" FontFamily="Maiandra GD" FontSize="14" FontWeight="Bold" Height="25" VerticalContentAlignment="Center" Padding="10,5,5,5" Canvas.Left="10" Canvas.Top="243">
                 <ListBoxItem Content="Yes" Foreground="#FF002EFF"/>
                 <ListBoxItem Content="No" Foreground="#FF002EFF"/>
             </ComboBox>
@@ -47,7 +48,7 @@
             <Label x:Name="label9" Content="City:" Canvas.Left="10" Canvas.Top="273"/>
             <TextBox x:Name="txtCityCook" Height="23" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="299" Width="120"/>
         </Canvas>
-        <Canvas x:Name="createEater" HorizontalAlignment="Left" Height="402" Margin="23,185,0,0" VerticalAlignment="Top" Width="439" Background="#FF44F6FF">
+        <Canvas x:Name="createEater" HorizontalAlignment="Left" Height="402" Margin="23,185,0,0" VerticalAlignment="Top" Width="439" Background="#FF44F6FF" d:IsHidden="True">
             <Label x:Name="label3" Content="Name:" Canvas.Left="10" Canvas.Top="10"/>
             <TextBox x:Name="txtEaterName" Height="23" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="36" Width="120"/>
             <Label x:Name="label4" Content="Phone Number: " Canvas.Left="10" Canvas.Top="74"/>
@@ -76,6 +77,8 @@
             <TextBox x:Name="txtEaterAge" Height="23" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="243" Width="120"/>
             <Label x:Name="label10" Content="City:" Canvas.Left="10" Canvas.Top="271"/>
             <TextBox x:Name="txtCityEater" Height="23" Canvas.Left="10" TextWrapping="Wrap" Canvas.Top="297" Width="120"/>
+            <Label x:Name="label3_Copy1" Content="Describe your meal preferences." Canvas.Left="174" Canvas.Top="212"/>
+            <TextBox x:Name="txtMealPreferencesEater" Height="77" Canvas.Left="174" TextWrapping="Wrap" AcceptsReturn="True" Canvas.Top="243" Width="203"/>
         </Canvas>
         <Canvas x:Name="createAdmin" HorizontalAlignment="Left" Height="402" Margin="23,185,0,0" VerticalAlignment="Top" Width="439" Background="#FF44F6FF" d:IsHidden="True">
             <Label x:Name="label6" Content="Name:" Canvas.Left="10" Canvas.Top="10"/>

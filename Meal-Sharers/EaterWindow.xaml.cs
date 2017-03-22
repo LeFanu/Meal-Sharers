@@ -19,10 +19,35 @@ namespace Meal_Sharers
     /// </summary>
     public partial class EaterWindow : Window
     {
+        Eater currentEater;
+
         public EaterWindow()
         {
             InitializeComponent();
+            
         }
 
+        public EaterWindow(Eater eater)
+        {
+            InitializeComponent();
+            currentEater = eater;
+            Console.WriteLine("Meal offers = " + Eater.MealOffers);
+            if (Eater.MealOffers > 0)
+            {
+                var response =   MessageBox.Show("One of the cooks has sent you an offer", "Awaiting Meal Offer", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (response == MessageBoxResult.Yes)
+                {
+                    Eater.MealOffers--;
+                    Console.WriteLine("Meal offers after = " + Eater.MealOffers);
+                }
+            }
+        }
+
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            this.Close();
+            mainWindow.ShowDialog();
+        }
     }
 }

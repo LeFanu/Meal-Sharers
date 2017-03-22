@@ -6,9 +6,19 @@ using System.Threading.Tasks;
 
 namespace Meal_Sharers
 {
+
     [Serializable]
     public class Cook
     {
+        public enum pvg_hygiene_statuses
+        {
+            None,
+            AwaitingResults,
+            OK,
+            Rejected,
+            RenevalWith3months,
+        };
+
         //Instance fields with getters and setters
         private static int orderNumberCount = 0;
         public static int OrderNumberCount
@@ -53,8 +63,8 @@ namespace Meal_Sharers
             }
         }
 
-        private Boolean validPVG = false;
-        public bool ValidPVG
+        private pvg_hygiene_statuses validPVG;
+        public pvg_hygiene_statuses ValidPVG
         {
             get
             {
@@ -67,8 +77,8 @@ namespace Meal_Sharers
             }
         }
 
-        private Boolean validHygieneCertificate = false;
-        public bool ValidHygieneCertificate
+        private pvg_hygiene_statuses validHygieneCertificate;
+        public pvg_hygiene_statuses ValidHygieneCertificate
         {
             get
             {
@@ -81,17 +91,17 @@ namespace Meal_Sharers
             }
         }
 
-        private List<Eater> eaters;
-        public List<Eater> Eaters
+        private List<Meal> meals = new List<Meal>();
+        public List<Meal> Meals
         {
             get
             {
-                return eaters;
+                return meals;
             }
 
             set
             {
-                eaters = value;
+                meals = value;
             }
         }
 
@@ -120,6 +130,34 @@ namespace Meal_Sharers
             set
             {
                 city = value;
+            }
+        }
+
+        public DateTime ActiveSince
+        {
+            get
+            {
+                return activeSince;
+            }
+
+            set
+            {
+                activeSince = value;
+            }
+        }
+        private DateTime activeSince = new DateTime();
+
+        private DateTime hygieneRenevalDate = new DateTime();
+        public DateTime HygieneRenevalDate
+        {
+            get
+            {
+                return hygieneRenevalDate;
+            }
+
+            set
+            {
+                hygieneRenevalDate = value;
             }
         }
 

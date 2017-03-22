@@ -9,6 +9,20 @@ namespace Meal_Sharers
     [Serializable]
     public class Eater
     {
+        private static int mealOffers = 0;
+        public static int MealOffers
+        {
+            get
+            {
+                return mealOffers;
+            }
+
+            set
+            {
+                mealOffers = value;
+            }
+        }
+
         //Instance fields with getters and setters
         private static int orderNumberCount = 0;
         public static int OrderNumberCount
@@ -108,14 +122,59 @@ namespace Meal_Sharers
             }
         }
 
-        
+        private bool hasAwaitingMealOffer = false;
+        public bool HasAwaitingMealOffer
+        {
+            get
+            {
+                return hasAwaitingMealOffer;
+            }
+
+            set
+            {
+                hasAwaitingMealOffer = value;
+            }
+        }
+
+        private String mealPreferences;
+        public string MealPreferences
+        {
+            get
+            {
+                return mealPreferences;
+            }
+
+            set
+            {
+                mealPreferences = value;
+            }
+        }
+
+        public Meal AwaitingMeals
+        {
+            get
+            {
+                return awaitingMeals;
+            }
+
+            set
+            {
+                awaitingMeals = value;
+            }
+        }
+
+
+        private Meal awaitingMeals = new Meal();
 
         public int calculateOrderCount()
         {
             return orderNumberCount++;
         }
         
+        public Eater()
+        {
 
+        }
 
 
     }

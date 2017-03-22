@@ -18,7 +18,7 @@
                 <DropShadowEffect Color="#FFCA58FF"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="425,320,0,0" VerticalAlignment="Top" Width="122" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="32" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated">
+        <Button x:Name="btnLogOut" Content="Log Out" HorizontalAlignment="Left" Margin="430,317,0,0" VerticalAlignment="Top" Width="132" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="35" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Click="btnLogOut_Click" >
             <Button.Effect>
                 <DropShadowEffect Color="#FFCA58FF"/>
             </Button.Effect>

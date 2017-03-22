@@ -29,6 +29,7 @@ namespace Meal_Sharers
             dbAccess = SingletonDatabaseAccess.DBInstance;
             ////reading our database and filling in the data to operate on
             dbAccess.readDB_OnStartup();
+
    
         }
 
@@ -37,6 +38,7 @@ namespace Meal_Sharers
         private void btnCook_Click(object sender, RoutedEventArgs e)
         {
             cmbChooseAccount.Items.Clear();
+            cmbChooseAccount.Text = "Select your Cook account from the list.";
             foreach (Cook cook in dbAccess.CooksDB)
             {
                 cmbChooseAccount.Items.Add("Name: " + cook.Name + ", PVG: " + cook.ValidPVG + ", Hygiene: " + cook.ValidPVG);
@@ -47,6 +49,7 @@ namespace Meal_Sharers
         private void btnEater_Click(object sender, RoutedEventArgs e)
         {
             cmbChooseAccount.Items.Clear();
+            cmbChooseAccount.Text = "Select your Eater account from the list.";
             foreach (Eater eater in dbAccess.EatersDB)
             {
                 cmbChooseAccount.Items.Add("Name: " + eater.Name + ", Age: " + eater.Age + ", Hygiene: " + eater.HasDisability);
@@ -57,6 +60,7 @@ namespace Meal_Sharers
         private void btnAdministrator_Click(object sender, RoutedEventArgs e)
         {
             cmbChooseAccount.Items.Clear();
+            cmbChooseAccount.Text = "Select your Admnistrator account from the list.";
             foreach (Administrator admin in dbAccess.AdminsDB)
             {
                 cmbChooseAccount.Items.Add("Name: " + admin.Name);
@@ -108,7 +112,9 @@ namespace Meal_Sharers
                 }
                     if (passwordBox.Password == SingletonDatabaseAccess.PasswordForAll)
                     {
-
+                        EaterWindow eaterWindow = new EaterWindow(currentEater);
+                        this.Close();
+                        eaterWindow.ShowDialog();
                     }
                     else
                     {
@@ -124,7 +130,9 @@ namespace Meal_Sharers
                 }
                     if (passwordBox.Password == SingletonDatabaseAccess.PasswordForAll)
                     {
-
+                        AdminWindow adminWindow = new AdminWindow(currentAdmin);
+                        this.Close();
+                    adminWindow.ShowDialog();
                     }
                     else
                     {

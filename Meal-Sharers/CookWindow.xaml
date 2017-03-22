@@ -19,12 +19,12 @@
                     <DropShadowEffect Color="#FFCA58FF"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="btnCompletedMeal" Content="Mark As Completed" HorizontalAlignment="Left" Margin="481,495,0,0" VerticalAlignment="Top" Width="174" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="35" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" >
+            <Button x:Name="btnCompletedMeal" Content="Mark As Completed" HorizontalAlignment="Left" Margin="481,495,0,0" VerticalAlignment="Top" Width="174" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="35" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Click="btnCompletedMeal_Click" >
                 <Button.Effect>
                     <DropShadowEffect Color="#FFCA58FF"/>
                 </Button.Effect>
             </Button>
-            <Button x:Name="btnSendOffer" Content="Send Meal Offer" HorizontalAlignment="Left" Margin="41,495,0,0" VerticalAlignment="Top" Width="160" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="35" FontSize="14" FontStretch="Expanded" TextOptions.TextHintingMode="Animated">
+            <Button x:Name="btnSendOffer" Content="Send Meal Offer" HorizontalAlignment="Left" Margin="41,495,0,0" VerticalAlignment="Top" Width="160" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="35" FontSize="14" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Click="btnSendOffer_Click">
                 <Button.Effect>
                     <DropShadowEffect Color="#FFCA58FF"/>
                 </Button.Effect>
@@ -34,20 +34,31 @@
             <ComboBox x:Name="cmbChooseCity" HorizontalAlignment="Left" Margin="41,177,0,0" VerticalAlignment="Top" Width="181" Background="#FF1F5CFF" Foreground="White" Text="Choose City" FontFamily="Maiandra GD" FontSize="14" FontWeight="Bold"/>
             <ComboBox x:Name="cmbMealPreference" HorizontalAlignment="Left" Margin="240,177,0,0" VerticalAlignment="Top" Width="160" Background="#FF1F5CFF" Foreground="White" Text="Meal Preference" FontFamily="Maiandra GD" FontSize="14" FontWeight="Bold"/>
             <Label x:Name="upcomingMeals" Content="Upcoming Meals:" HorizontalAlignment="Left" Margin="481,97,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontWeight="Bold" FontSize="18"/>
-            <ListBox x:Name="listUpcomingMeals" HorizontalAlignment="Left" Height="342" Margin="481,143,0,0" VerticalAlignment="Top" Width="321"/>
+            <ListBox x:Name="listUpcomingMeals" HorizontalAlignment="Left" Height="342" Margin="481,143,0,0" VerticalAlignment="Top" Width="321" MouseDoubleClick="listUpcomingMeals_MouseDoubleClick"/>
             <Label x:Name="yourStatus" Content="Your Status:" HorizontalAlignment="Left" Margin="832,97,0,0" VerticalAlignment="Top" FontFamily="Maiandra GD" FontWeight="Bold" FontSize="18"/>
-            <Canvas x:Name="canvStatus" HorizontalAlignment="Left" Height="278" Margin="832,143,0,0" VerticalAlignment="Top" Width="246" Background="White">
-                <Border BorderBrush="#FF05006E" BorderThickness="2" Height="278" Width="248">
-                    <ListBox x:Name="lstCurrentStatus"/>
-                </Border>
-            </Canvas>
             <Label x:Name="label" Content="Choose City:" HorizontalAlignment="Left" Margin="41,143,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="119" FontFamily="Maiandra GD" FontSize="16"/>
             <Label x:Name="label_Copy" Content="Meal Preference:" HorizontalAlignment="Left" Margin="240,143,0,0" VerticalAlignment="Top" RenderTransformOrigin="0,0" Width="175" FontFamily="Maiandra GD" FontSize="16"/>
-            <Button x:Name="btnUploadDetails" Content="Upload Details" HorizontalAlignment="Left" Margin="670,495,0,0" VerticalAlignment="Top" Width="132" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="35" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" >
+            <Button x:Name="btnLogOut" Content="Log Out" HorizontalAlignment="Left" Margin="832,495,0,0" VerticalAlignment="Top" Width="132" Background="#FF1F5CFF" Foreground="White" BorderBrush="#FF080000" FontWeight="Bold" FontFamily="Maiandra GD" Height="35" FontSize="16" FontStretch="Expanded" TextOptions.TextHintingMode="Animated" Click="btnLogOut_Click" >
                 <Button.Effect>
                     <DropShadowEffect Color="#FFCA58FF"/>
                 </Button.Effect>
             </Button>
+            <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" Height="342" Margin="825,143,0,0" VerticalAlignment="Top" Width="285"/>
+            <Label x:Name="lblPVGstatusOK" Content="Approved!" HorizontalAlignment="Left" Margin="832,178,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,-0.385" Background="White" Foreground="#FF14C702" FontWeight="Bold" FontSize="16" Visibility="Hidden"/>
+            <Label x:Name="label1" Content="Hygiene Certificate Status:" HorizontalAlignment="Left" Margin="832,220,0,0" VerticalAlignment="Top" Width="208" FontWeight="Bold" FontSize="16"/>
+            <Label x:Name="lblPVGstatusBAD" Content="Rejected!" HorizontalAlignment="Left" Margin="832,178,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,-0.385" Background="White" Foreground="#FFE41A06" FontWeight="Bold" FontSize="16" Width="90" Visibility="Hidden"/>
+            <Label x:Name="lblPVGstatusAwaiting" Content="Awaiting Results" HorizontalAlignment="Left" Margin="832,178,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,-0.385" Background="White" Foreground="#FF17A0FF" FontWeight="Bold" FontSize="16" Width="168" Visibility="Hidden"/>
+            <Label x:Name="lblHygieneStatusBAD" Content="None!" HorizontalAlignment="Left" Margin="832,256,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,-0.385" Background="White" Foreground="#FFE41A06" FontWeight="Bold" FontSize="16" Width="90" Visibility="Hidden"/>
+            <Label x:Name="lblHygieneStatusRenew" Content="Please Renew Your Certificate" HorizontalAlignment="Left" Margin="832,251,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,-0.385" Background="White" Foreground="#FF17A0FF" FontWeight="Bold" FontSize="16" Width="248" Visibility="Hidden"/>
+            <Label x:Name="lblHygieneStatusOK" Content="OK" HorizontalAlignment="Left" Margin="832,251,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.132,-0.385" Background="White" Foreground="#FF67CF00" FontWeight="Bold" FontSize="16" Width="90" Visibility="Hidden"/>
+            <Label x:Name="label1_Copy" Content="PVG Status:" HorizontalAlignment="Left" Margin="832,147,0,0" VerticalAlignment="Top" Width="132" FontWeight="Bold" FontSize="16"/>
+            <Label x:Name="lblCookName" Content="Cook Name" HorizontalAlignment="Left" Margin="832,292,0,0" VerticalAlignment="Top" Width="220" FontFamily="Arial" FontSize="16" Foreground="#FF0432FF" Background="White"/>
+            <Label x:Name="lblCookCity" Content="Cook City" HorizontalAlignment="Left" Margin="832,320,0,0" VerticalAlignment="Top" Width="220" FontFamily="Arial" FontSize="14" Foreground="#FF0432FF" Background="White"/>
+            <Label x:Name="label1_Copy1" Content="Active since:" HorizontalAlignment="Left" Margin="832,351,0,0" VerticalAlignment="Top" Width="168" FontWeight="Bold"/>
+            <Label x:Name="lblCookActiveSince" Content="Active Since" HorizontalAlignment="Left" Margin="832,382,0,0" VerticalAlignment="Top" Width="220" FontFamily="Arial" FontSize="14" Foreground="#FF0432FF" Background="White"/>
+            <Label x:Name="lblHygieneTitle" Content="Hygiene Certificate Due:" HorizontalAlignment="Left" Margin="832,413,0,0" VerticalAlignment="Top" Width="208" FontSize="14" FontWeight="Bold" Visibility="Hidden"/>
+            <Label x:Name="lblCookRenewalDate" Content="Renew On" HorizontalAlignment="Left" Margin="832,442,0,0" VerticalAlignment="Top" Width="220" FontFamily="Arial" FontSize="14" Foreground="#FF0432FF" Background="White" Visibility="Hidden"/>
+            <Label x:Name="lblHygieneOverdue" Content="You Must Renew Hygiene Certificate" HorizontalAlignment="Left" Margin="832,442,0,0" VerticalAlignment="Top" Width="263" FontFamily="Arial" FontSize="14" Foreground="#FFE81500" Background="White" FontWeight="Bold" Visibility="Hidden"/>
 
         </Grid>
 
